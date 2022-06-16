@@ -1,3 +1,30 @@
-.resetButtons{
-    background-color: gray;
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#masterName{
+    align-self: center;
+}
+
+.buttonsContainer{
+    width: 80%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.bc_row{
+    margin-top: 1%;
+}
+
+.letterButton{
+    width: 8%;
+}
+
+#playAgain{
+    margin-top:2%
+}
+

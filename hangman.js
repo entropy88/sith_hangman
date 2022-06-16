@@ -26,6 +26,7 @@ letterButtons.forEach(letterButton => letterButton.addEventListener('click', fun
 playBtn.addEventListener('click', function () {
     let name = getRandomMaster();
     displayHiddenName();
+    playBtn.style.display='none';
 })
 
 let guesses = [];
@@ -34,7 +35,8 @@ let guesses = [];
 let sith_masters = [
     "Adas", "Amanoa", "Darth Andeddu", "Darth Andru", "Darth Angral", "Ardran", "YuthuraBan",
     "Darth Bane", "Darth Baras", "Beldiss", "Borthis", "Darth Caedus", "Darth Caldoth", "Calypho",
-    "Darth Chratis", "Darth Cognus"]
+    "Darth Chratis", "Darth Cognus","Tari Darkspanner", "Darth Decimus","Ako Domi"," Darth Gean",
+    "Githany", "Darth Gorgos", "Grathan", "Dathka Graush", "Darth Gravid","Darth Guile"]
 
 
 
@@ -93,8 +95,11 @@ function registerGuessess(e) {
         e.target.disabled = "true";
         e.target.style.backgroundColor='red';
         console.log(guesses);
-        if (guesses.length > 6) {
-            alert('You died')
+        if (guesses.length > 5) {
+            alert('You died');
+            sithName.textContent = sithMaster;
+            playAgainBtn.style.display='block';
+            playBtn.style.display='none';
         }
     }
 
@@ -103,11 +108,9 @@ function registerGuessess(e) {
 function updateName() {
     sithName.textContent = hiddenName;
     if (sithMaster === hiddenName) {
-        alert('congratulations');
-       
+  //DISPLAY MEME  
+        playAgainBtn.style.display="block";
     }
-
-
 }
 
 function reset() {    
@@ -126,5 +129,6 @@ function reset() {
     getRandomMaster();
     displayHiddenName();
     playBtn.style.display='none';
+    playAgainBtn.style.display='none';
 
 }
