@@ -18,6 +18,18 @@ main{
     font-size: 36px;
 }
 
+.rigthGuess{
+    color: white;
+    background: radial-gradient(#24f39b,#1e7a2f);
+    border-color: #24f39b;
+}
+
+.wrongGuess{
+    color: white;
+    background: radial-gradient(#e81b88,#c91437);
+    border-color: #e81b88;
+}
+
 button{
     border-radius: 4px;
     padding:0.5%;

@@ -90,7 +90,7 @@ function registerGuessess(e) {
             }
         }
 
-        e.target.style.backgroundColor = 'green';
+        e.target.classList.add("rigthGuess");
         e.target.disabled = "true";
         updateName();
 
@@ -98,7 +98,7 @@ function registerGuessess(e) {
         guesses.push(guess);
         //disable button
         e.target.disabled = "true";
-        e.target.style.backgroundColor='red';
+        e.target.classList.add("wrongGuess");
         console.log(guesses);
         if (guesses.length > 5) {
             resultGif.src='https://dorksideoftheforce.com/files/2016/11/Vader-R1-Japan-Trailer.gif';
