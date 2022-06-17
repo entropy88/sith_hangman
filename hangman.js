@@ -7,6 +7,8 @@ let hiddenNameArray = [];
 
 var playBtn = document.getElementById('play');
 var playAgainBtn=document.getElementById('playAgain');
+var resultGif=document.getElementById('resultGif');
+
 playAgainBtn.addEventListener('click',reset)
 var sithName = document.getElementById('masterName');
 
@@ -36,7 +38,10 @@ let sith_masters = [
     "Adas", "Amanoa", "Darth Andeddu", "Darth Andru", "Darth Angral", "Ardran", "YuthuraBan",
     "Darth Bane", "Darth Baras", "Beldiss", "Borthis", "Darth Caedus", "Darth Caldoth", "Calypho",
     "Darth Chratis", "Darth Cognus","Tari Darkspanner", "Darth Decimus","Ako Domi"," Darth Gean",
-    "Githany", "Darth Gorgos", "Grathan", "Dathka Graush", "Darth Gravid","Darth Guile"]
+    "Githany", "Darth Gorgos", "Grathan", "Dathka Graush", "Darth Gravid","Darth Guile","Darth Hadra",
+"Hezzoran", "Darth Howl", "Xat Hracken", "Darth Ikoral", "Darth Jadus","Skere Kaan","Kas'im","Kherus",
+"Kopecz", "Korek","Darth Krayt","Kreia","Ludo Kressh","Kaox Krul","Exar Kun","Lumiya","Darth Malak",
+"Darth Malgus","Darth Marr","Maul","Darth Mortis","Ruku Myal"]
 
 
 
@@ -62,7 +67,7 @@ function displayHiddenName() {
 
     secretNameArray.forEach(letter => {
         if (letter !== " ") {
-            hiddenNameArray.push("*");
+            hiddenNameArray.push("#");
         } else {
             hiddenNameArray.push(letter);
         }
@@ -96,7 +101,7 @@ function registerGuessess(e) {
         e.target.style.backgroundColor='red';
         console.log(guesses);
         if (guesses.length > 5) {
-            alert('You died');
+            resultGif.src='https://dorksideoftheforce.com/files/2016/11/Vader-R1-Japan-Trailer.gif';
             sithName.textContent = sithMaster;
             playAgainBtn.style.display='block';
             playBtn.style.display='none';
@@ -109,6 +114,7 @@ function updateName() {
     sithName.textContent = hiddenName;
     if (sithMaster === hiddenName) {
   //DISPLAY MEME  
+        resultGif.src="https://thumbs.gfycat.com/AltruisticTightGhostshrimp.webp";
         playAgainBtn.style.display="block";
     }
 }
@@ -130,5 +136,6 @@ function reset() {
     displayHiddenName();
     playBtn.style.display='none';
     playAgainBtn.style.display='none';
+    resultGif.src="";
 
 }

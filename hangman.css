@@ -1,12 +1,33 @@
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(Starjedi.ttf);
+  }
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: myFirstFont;
 }
+
+
 
 #masterName{
     align-self: center;
+    font-size: 36px;
+}
+
+button{
+    border-radius: 4px;
+    padding:0.5%;
+    font-weight: bold;
+}
+
+.playButtons{
+    color: white;
+    background-color: black;
+    font-family: myFirstFont;
 }
 
 .buttonsContainer{
@@ -26,5 +47,9 @@ main{
 
 #playAgain{
     margin-top:2%
+}
+
+#resultGif{
+    margin:1%;
 }
 
